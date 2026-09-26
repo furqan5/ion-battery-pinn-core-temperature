@@ -214,6 +214,13 @@ Shape stability across ageing: c₁ IQR 0.167 (12.4 %), c₂ IQR 0.144 (6.6 %), 
 `ac1(d2) = +0.3190` against a white-noise reference of **−4/6 = −0.6667**; smallest temperature
 step 0.00135 K; σ̂ = 0.0124 K. Reference behaviour: white noise −0.670/−0.610/−0.689 at
 σ = 0.10/0.02/0.005 K; 3-point boxcar ≈ −0.50; linear interpolation ≈ 0.00; noiseless signal +0.99.
+These reference values were single-realisation checks with no committed script. They are now
+produced by `p2_noise_reference.py` (medians over 200 seeds on a synthetic B0005-like rise;
+output `results/p2_noise_reference.log`): white noise −0.660/−0.657/−0.611, 3- and 5-point
+boxcar −0.487/−0.486 (σ̂ low by 3.69×/6.16×), linear interpolation +0.001 (2.86×), noiseless
++0.976. A current switch-off inside the record pulls a noiseless series to −0.010, towards zero
+and never above it, so the positive value measured on B0005 is not a switch-off artefact.
+Paper 2 quotes the script values.
 **Conclusion: no white-noise floor exists in this dataset**, so any "N× the noise floor" statistic
 is void. Part 6 re-ran it on the raw `.mat` mirror and got identical values to five significant
 figures — the smoothing is in the original NASA files, not the curation.

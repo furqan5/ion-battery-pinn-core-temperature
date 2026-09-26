@@ -1,0 +1,21 @@
+======================================================================================
+FILTERING DIAGNOSTIC -- reference values on a synthetic B0005-like rise
+======================================================================================
+  197 samples over 3690 s at 2 A, rise 17.37 K, tau 998 s
+  white-noise theory: ac1(d2) = -4/6 = -0.6667, sigma_hat = sigma
+  noisy cases: median over 200 seeds
+
+  series                                     ac1(d2)  sigma_hat (K)  true/est
+  white noise, sigma = 0.1 K                  -0.660        0.09959      1.00
+  white noise, sigma = 0.02 K                 -0.657        0.01994      1.00
+  white noise, sigma = 0.005 K                -0.611        0.00505      0.99
+  3-point boxcar, sigma = 0.1 K               -0.487        0.02711      3.69
+  5-point boxcar, sigma = 0.1 K               -0.486        0.01622      6.16
+  linear interpolation, sigma = 0.1 K         +0.001        0.03491      2.86
+  noiseless signal                            +0.976        0.00084        --
+  noiseless, with 19-sample rest              -0.010        0.01346        --
+
+  Reading: near -0.67 the estimate is an instrument floor; near -0.5 the
+  series was smoothed; near 0 it was interpolated, or a current step
+  dominates; above 0 the second difference is smooth signal curvature and
+  sigma_hat says nothing about instrument noise.
