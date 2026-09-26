@@ -1,4 +1,4 @@
-"""Reference values for the filtering diagnostic used in paper 2 (Table IV).
+"""Reference values for the filtering diagnostic used in paper 2 (Table III).
 
 For a smooth signal plus white noise of standard deviation sigma, the second
 difference

@@ -103,7 +103,7 @@ pip install -r requirements.txt
 | Entropic vs irreversible separation | `python g1_run.py` |
 | Paper 2: identifiability tables, profile likelihood, final fits, EIS cross-check | `verify/Part3_CRLB_Classical_Inverse_executed.ipynb` (executed record; re-run with the NASA data attached) |
 | Paper 2: figures and summary statistics from the final fits | `python fig_paper2.py` |
-| Paper 2: reference values for the filtering diagnostic (Table IV) | `python p2_noise_reference.py` |
+| Paper 2: reference values for the filtering diagnostic (Table III) | `python p2_noise_reference.py` |
 | PCM solver verification against the Neumann Stefan solution | `python pcm_stage_a_verify.py` |
 | PCM CRLB and the leak audit that reinterprets it | `python pcm_stage_b_crlb.py`, `python pcm_stage_b_audit.py` |
 | PCM regime sweep across heating rate | `python pcm_stage_e_regime.py` |
