@@ -1,0 +1,56 @@
+DS1: 25/200 replicates, 174 s
+DS1: 50/200 replicates, 354 s
+DS1: 75/200 replicates, 501 s
+DS1: 100/200 replicates, 638 s
+DS1: 125/200 replicates, 770 s
+DS1: 150/200 replicates, 907 s
+DS1: 175/200 replicates, 1031 s
+DS1: 200/200 replicates, 1161 s
+{
+ "h": 37.06069822155079,
+ "k": 0.3937474078846354,
+ "Bi": 1.2141870587198362,
+ "ls_sd_h": 0.01592941995793789,
+ "ls_sd_k": 0.0021917880049622776,
+ "boot_n": 200,
+ "block_s": 300.0,
+ "boot_h_sd": 0.2384858024845148,
+ "boot_k_sd": 0.03086221895880974,
+ "boot_corr_hk": 0.10132394872723806,
+ "boot_Bi_mean": 1.2217879774523872,
+ "boot_Bi_sd": 0.09377020576037629,
+ "boot_Bi_p2_5": 1.0355321349428537,
+ "boot_Bi_p97_5": 1.384099678756179,
+ "Bi_variants": {
+  "rho_cp_minus3pct": 1.3746172483930266,
+  "rho_cp_plus3pct": 1.063275322176341
+ }
+}
+DS2: 25/200 replicates, 74 s
+DS2: 50/200 replicates, 146 s
+DS2: 75/200 replicates, 218 s
+DS2: 100/200 replicates, 288 s
+DS2: 125/200 replicates, 362 s
+DS2: 150/200 replicates, 438 s
+DS2: 175/200 replicates, 506 s
+DS2: 200/200 replicates, 581 s
+{
+ "h": 37.28458209987387,
+ "k": 0.4186974625744326,
+ "Bi": 1.1487318459754694,
+ "ls_sd_h": 0.019518000743204162,
+ "ls_sd_k": 0.003399357481720734,
+ "boot_n": 200,
+ "block_s": 300.0,
+ "boot_h_sd": 0.13719665111146936,
+ "boot_k_sd": 0.0250622651256257,
+ "boot_corr_hk": 0.5171885925325602,
+ "boot_Bi_mean": 1.1488799715987879,
+ "boot_Bi_sd": 0.06493789193803802,
+ "boot_Bi_p2_5": 1.026895198516025,
+ "boot_Bi_p97_5": 1.2610189470670776,
+ "Bi_variants": {
+  "rho_cp_minus3pct": 1.3098104930050303,
+  "rho_cp_plus3pct": 0.9978128668866431
+ }
+}

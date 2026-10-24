@@ -74,6 +74,34 @@ The set analysed is *all 168 discharge cycles in `B0005.mat`*, not an
 ambient-selected subset. The manuscript describes it that way. See G-6 in
 `GAPS.md`.
 
+## 4. LG M50 21700 cells with embedded core thermocouples
+
+**Used by:** `rev1/warwick_export.m` and `rev1/warwick.py` (second cell type and
+transfer of the calibrated gain).
+
+> B. Gulsoy, T. A. Vincent, Q. Ngo, M. Faraji Niri and J. Marco, "Dataset of
+> internal temperature during lithium-ion battery ageing," Mendeley Data, v2.
+> doi: [10.17632/bf6fksxpp2.2](https://doi.org/10.17632/bf6fksxpp2.2).
+> Described in B. Gulsoy *et al.*, *J. Energy Storage* 54 (2022) 105260,
+> doi: [10.1016/j.est.2022.105260](https://doi.org/10.1016/j.est.2022.105260).
+
+Download `CoreTemperature_AgeingStudy.7z` (2.3 GB) and extract it to
+`Data_Sets/warwick_lgm50/extract/`. The 22.5 GB `450cycles_dataTable.mat` is not
+needed. The files are MATLAB `table` objects, so convert them once in MATLAB:
+
+```
+warwick_export('<...>/ShortTermAgeing_100cycles/ShortTerm_RPT_dataTable.mat', '<...>/warwick_lgm50/np/rpt_short')
+```
+
+`warwick.py` then reads `warwick_lgm50/np/` under `BATTERY_PINN_DATA`. Known
+issues with the data, all handled and reported by the script:
+- in some tests the core and surface columns are swapped (channels are assigned
+  by which one is hotter during internal heating);
+- in two short-term tests and most long-term tests the two temperature channels
+  are offset in time (tests with a core-to-surface onset delay above 20 s are
+  excluded);
+- the load-profile temperatures stop at 1 048 575 rows and carry no time stamp.
+
 ---
 
 ## What *is* committed, and why that is not redistribution

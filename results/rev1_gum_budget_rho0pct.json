@@ -1,0 +1,279 @@
+{
+ "inputs": {
+  "Bi": {
+   "1": 1.2141870587198362,
+   "2": 1.1487318459754694
+  },
+  "u_Bi_repro": 0.04628382479554991,
+  "a_cs": 0.10717599999999965,
+  "a_si": 0.32340654545454567,
+  "pre_current": {
+   "1": {
+    "cs": 0.10717599999999965,
+    "si": 0.32340654545454567
+   },
+   "2": {
+    "cs": 0.02531245454545461,
+    "si": 0.15201645454545462
+   }
+  },
+  "R_tc_max_m": 0.0015,
+  "tau_max_s": 2.0,
+  "M": 4000,
+  "A_rho_rel": 0.0,
+  "rho_grid": [
+   0.94,
+   0.97,
+   1.0,
+   1.03,
+   1.06
+  ],
+  "Bi_vs_rho": {
+   "1": [
+    1.5455067724580676,
+    1.3746172483930266,
+    1.2141870587198362,
+    1.063275322176341,
+    0.921051282637128
+   ],
+   "2": [
+    1.4820159402265474,
+    1.3098104930050303,
+    1.1487318459754694,
+    0.9978128668866431,
+    0.8562216445700667
+   ]
+  },
+  "dlnBi_dlnrhocp": {
+   "1": -4.297858102374059,
+   "2": -4.554909215062559
+  },
+  "between_record_check": {
+   "abs_dBi": 0.06545521274436683,
+   "u_diff_boot": 0.11406042827247147,
+   "ratio": 0.5738643431007042
+  }
+ },
+ "2": {
+  "Bi_used": 1.2141870587198362,
+  "Bi_from": "1",
+  "u_Bi_boot": 0.09377020576037629,
+  "u_Bi_repro": 0.04628382479554991,
+  "u_Bi_rho_lin": 0.0,
+  "u_noise_Ts": 0.023045545385494078,
+  "u_noise_Tinf": 0.053014262436708454,
+  "u_noise_Tc": 0.012749941033985511,
+  "t_peak_s": 1204.0,
+  "rise_peak_K": 10.458894272727274,
+  "d_peak_K": -0.1930866900404915,
+  "uc_hat_peak_K": 0.5065766338421207,
+  "uc_ref_peak_K": 0.07528380363367466,
+  "U_d_peak_k2_K": 1.0242803074244233,
+  "budget_estimate": [
+   {
+    "quantity": "Bi, fit (bootstrap)",
+    "value": 1.2141870587198362,
+    "u": 0.09377020576037629,
+    "type": "A",
+    "distribution": "Gaussian",
+    "c": 5.229447136363637
+   },
+   {
+    "quantity": "Bi via rho_cp +/-0 %",
+    "value": 0.0,
+    "u": 0.0,
+    "type": "B",
+    "distribution": "rectangular",
+    "c": 5.229447136363637
+   },
+   {
+    "quantity": "T_s noise",
+    "value": 18.223502545454547,
+    "u": 0.023045545385494078,
+    "type": "A",
+    "distribution": "Gaussian",
+    "c": 1.607093529359918
+   },
+   {
+    "quantity": "T_s lag (tau<=2 s)",
+    "value": 0.0,
+    "u": 0.018705203966758302,
+    "type": "B",
+    "distribution": "rectangular",
+    "c": 1.607093529359918
+   },
+   {
+    "quantity": "T_inf noise",
+    "value": 7.764608272727272,
+    "u": 0.053014262436708454,
+    "type": "A",
+    "distribution": "Gaussian",
+    "c": -0.6070935293599181
+   },
+   {
+    "quantity": "T_inf offset vs T_s",
+    "value": 0.0,
+    "u": 0.18671885607586888,
+    "type": "B",
+    "distribution": "rectangular",
+    "c": -0.6070935293599181
+   }
+  ],
+  "budget_reference": [
+   {
+    "quantity": "T_c,ref noise",
+    "value": 24.766116272727274,
+    "u": 0.012749941033985511,
+    "type": "A",
+    "distribution": "Gaussian",
+    "c": 1.0
+   },
+   {
+    "quantity": "T_c,ref offset vs T_s",
+    "value": 0.0,
+    "u": 0.06187809245066713,
+    "type": "B",
+    "distribution": "rectangular",
+    "c": 1.0
+   },
+   {
+    "quantity": "T_c,ref radial position",
+    "value": 0.0,
+    "u": 0.039561192657396126,
+    "type": "B",
+    "distribution": "r uniform 0..1.5 mm",
+    "c": 1.0
+   },
+   {
+    "quantity": "T_c,ref lag (tau<=2 s)",
+    "value": 0.0,
+    "u": 0.010540578891818878,
+    "type": "B",
+    "distribution": "rectangular",
+    "c": 1.0
+   }
+  ],
+  "mc_median_u_hat_K": 0.4153276921204354,
+  "mc_max_u_hat_K": 0.5151087001220623,
+  "mc_median_u_ref_K": 0.06822734585647464,
+  "frac_abs_En_le_1": 0.9960474308300395,
+  "rmse_obs_K": 0.14086579924930323,
+  "bias_obs_K": -0.05709784747945808,
+  "rmse_true_median_K": 0.14336452273422662,
+  "rmse_true_p2_5_K": 0.10179159786999784,
+  "rmse_true_p97_5_K": 0.23011159622262697,
+  "bias_true_p2_5_K": -0.1971183856450851,
+  "bias_true_p97_5_K": 0.03078138341238729
+ },
+ "1": {
+  "Bi_used": 1.1487318459754694,
+  "Bi_from": "2",
+  "u_Bi_boot": 0.06493789193803802,
+  "u_Bi_repro": 0.04628382479554991,
+  "u_Bi_rho_lin": 0.0,
+  "u_noise_Ts": 0.021570072331455626,
+  "u_noise_Tinf": 0.04779154081182543,
+  "u_noise_Tc": 0.012586284957811087,
+  "t_peak_s": 3505.0,
+  "rise_peak_K": 11.469697454545454,
+  "d_peak_K": -0.5435779078572018,
+  "uc_hat_peak_K": 0.3904769444364035,
+  "uc_ref_peak_K": 0.07911819476683604,
+  "U_d_peak_k2_K": 0.7968235259567908,
+  "budget_estimate": [
+   {
+    "quantity": "Bi, fit (bootstrap)",
+    "value": 1.1487318459754694,
+    "u": 0.06493789193803802,
+    "type": "A",
+    "distribution": "Gaussian",
+    "c": 5.734848727272727
+   },
+   {
+    "quantity": "Bi via rho_cp +/-0 %",
+    "value": 0.0,
+    "u": 0.0,
+    "type": "B",
+    "distribution": "rectangular",
+    "c": 5.734848727272727
+   },
+   {
+    "quantity": "T_s noise",
+    "value": 19.353942454545454,
+    "u": 0.021570072331455626,
+    "type": "A",
+    "distribution": "Gaussian",
+    "c": 1.5743659229877347
+   },
+   {
+    "quantity": "T_s lag (tau<=2 s)",
+    "value": 0.0,
+    "u": 0.012309842548555033,
+    "type": "B",
+    "distribution": "rectangular",
+    "c": 1.5743659229877347
+   },
+   {
+    "quantity": "T_inf noise",
+    "value": 7.884245000000001,
+    "u": 0.04779154081182543,
+    "type": "A",
+    "distribution": "Gaussian",
+    "c": -0.5743659229877347
+   },
+   {
+    "quantity": "T_inf offset vs T_s",
+    "value": 0.0,
+    "u": 0.18671885607586888,
+    "type": "B",
+    "distribution": "rectangular",
+    "c": -0.5743659229877347
+   }
+  ],
+  "budget_reference": [
+   {
+    "quantity": "T_c,ref noise",
+    "value": 26.485323727272725,
+    "u": 0.012586284957811087,
+    "type": "A",
+    "distribution": "Gaussian",
+    "c": 1.0
+   },
+   {
+    "quantity": "T_c,ref offset vs T_s",
+    "value": 0.0,
+    "u": 0.06187809245066713,
+    "type": "B",
+    "distribution": "rectangular",
+    "c": 1.0
+   },
+   {
+    "quantity": "T_c,ref radial position",
+    "value": 0.0,
+    "u": 0.04312129069574674,
+    "type": "B",
+    "distribution": "r uniform 0..1.5 mm",
+    "c": 1.0
+   },
+   {
+    "quantity": "T_c,ref lag (tau<=2 s)",
+    "value": 0.0,
+    "u": 0.020320682506337624,
+    "type": "B",
+    "distribution": "rectangular",
+    "c": 1.0
+   }
+  ],
+  "mc_median_u_hat_K": 0.2568957540196515,
+  "mc_max_u_hat_K": 0.40231179779626136,
+  "mc_median_u_ref_K": 0.06641665757105501,
+  "frac_abs_En_le_1": 0.9969864389753893,
+  "rmse_obs_K": 0.3366236527792907,
+  "bias_obs_K": -0.2547715214381719,
+  "rmse_true_median_K": 0.3528333289974167,
+  "rmse_true_p2_5_K": 0.27390403737540336,
+  "rmse_true_p97_5_K": 0.4484908423203173,
+  "bias_true_p2_5_K": -0.3811955729288398,
+  "bias_true_p97_5_K": -0.16318732282306483
+ }
+}

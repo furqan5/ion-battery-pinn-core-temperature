@@ -1,0 +1,30 @@
+
+=== calibrate on record 1, deploy on record 2 ===
+  G = 0.62083 (Bi = 1.2417); bootstrap u_A(G) = 0.00173 (0.28 %); eps_qs = 5.83 %
+  peak gradient at t = 1204 s: theta = 10.459 K, T_c,ref = 24.766 C, T_c_hat = 24.717 C, d = -0.049 K
+  input quantity                         type  u(T_c_hat)  u(T_c,ref)     u(d)
+  G, calibration scatter (bootstrap)        A      0.0184      0.0000   0.0184
+  sensor white noise (all channels)         A      0.0489      0.0130   0.0502
+  T_inf offset relative to T_s              B      0.0302      0.0000   0.0302
+  T_c,ref offset relative to T_s            B      0.0761      0.0606   0.0155
+  core junction radial position             B      0.0261      0.0263   0.0002
+  thermocouple lag                          B      0.0151      0.0052   0.0162
+  quasi-steady approximation D_qs           B      0.2162      0.0000   0.2162
+  combined (full MC):                              0.2421      0.0688   0.2289   U(d), k=2 = 0.458 K
+  over the record: median u(T_c_hat) 0.199 K (max 0.249); |E_n| <= 1 for 96.7 % of samples
+  observed RMSE(d) 0.130 K, max |d| 0.404 K; RMSE vs TRUE core: median 0.120 K, 95 % interval [0.091, 0.177] K
+
+=== calibrate on record 2, deploy on record 1 ===
+  G = 0.61542 (Bi = 1.2308); bootstrap u_A(G) = 0.00178 (0.29 %); eps_qs = 4.78 %
+  peak gradient at t = 3505 s: theta = 11.470 K, T_c,ref = 26.485 C, T_c_hat = 26.413 C, d = -0.073 K
+  input quantity                         type  u(T_c_hat)  u(T_c,ref)     u(d)
+  G, calibration scatter (bootstrap)        A      0.0200      0.0000   0.0200
+  sensor white noise (all channels)         A      0.0457      0.0129   0.0471
+  T_inf offset relative to T_s              B      0.0377      0.0000   0.0377
+  T_c,ref offset relative to T_s            B      0.0831      0.0626   0.0205
+  core junction radial position             B      0.0283      0.0286   0.0003
+  thermocouple lag                          B      0.0115      0.0099   0.0162
+  quasi-steady approximation D_qs           B      0.1957      0.0000   0.1957
+  combined (full MC):                              0.2231      0.0703   0.2069   U(d), k=2 = 0.414 K
+  over the record: median u(T_c_hat) 0.140 K (max 0.227); |E_n| <= 1 for 99.0 % of samples
+  observed RMSE(d) 0.097 K, max |d| 0.423 K; RMSE vs TRUE core: median 0.111 K, 95 % interval [0.087, 0.174] K

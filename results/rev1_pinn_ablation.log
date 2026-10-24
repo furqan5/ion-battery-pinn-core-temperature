@@ -1,0 +1,18 @@
+baseline (tanh, 48x4, w_data 200)    seed 0: surf 0.1960 K  core 0.6344 K  eta 1.336e-01  sel 1.408e-01  195 s
+baseline (tanh, 48x4, w_data 200)    seed 1: surf 0.1943 K  core 0.6238 K  eta 1.339e-01  sel 1.393e-01  146 s
+baseline (tanh, 48x4, w_data 200)    seed 2: surf 0.1953 K  core 0.6244 K  eta 1.325e-01  sel 1.384e-01  154 s
+width 96, depth 6                    seed 0: surf 0.1967 K  core 0.6059 K  eta 1.276e-01  sel 1.364e-01  538 s
+width 96, depth 6                    seed 1: surf 0.1970 K  core 0.5898 K  eta 1.336e-01  sel 1.401e-01  655 s
+width 96, depth 6                    seed 2: surf 0.1982 K  core 0.5895 K  eta 1.345e-01  sel 1.389e-01  487 s
+Fourier time features, n_freq 8      seed 0: surf 0.1261 K  core 0.4918 K  eta 6.948e-02  sel 3.789e-02  124 s
+Fourier time features, n_freq 8      seed 1: surf 0.1287 K  core 0.4827 K  eta 7.445e-02  sel 3.605e-02  122 s
+Fourier time features, n_freq 8      seed 2: surf 0.1289 K  core 0.4955 K  eta 7.138e-02  sel 3.716e-02  124 s
+SiLU activation                      seed 0: surf 0.1989 K  core 0.6147 K  eta 1.339e-01  sel 1.361e-01  250 s
+SiLU activation                      seed 1: surf 0.1978 K  core 0.6069 K  eta 1.358e-01  sel 1.358e-01  258 s
+SiLU activation                      seed 2: surf 0.1960 K  core 0.6296 K  eta 1.322e-01  sel 1.389e-01  248 s
+w_data 50                            seed 0: surf 0.2356 K  core 0.6524 K  eta 1.110e-01  sel 1.188e-01  116 s
+w_data 50                            seed 1: surf 0.2457 K  core 0.6278 K  eta 1.068e-01  sel 1.051e-01  118 s
+w_data 50                            seed 2: surf 0.2394 K  core 0.6588 K  eta 1.046e-01  sel 1.083e-01  114 s
+w_data 1000                          seed 0: surf 0.1485 K  core 0.7247 K  eta 2.070e-01  sel 2.131e-01  118 s
+w_data 1000                          seed 1: surf 0.1485 K  core 0.7031 K  eta 2.086e-01  sel 2.146e-01  116 s
+w_data 1000                          seed 2: surf 0.1484 K  core 0.7214 K  eta 2.049e-01  sel 2.128e-01  118 s

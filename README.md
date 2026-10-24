@@ -27,6 +27,39 @@ is the neural estimator at 0.614 K RMSE; the one-line algebraic relation reaches
 
 ---
 
+## Revision 1 (October 2026): calibration, GUM uncertainty and a correction
+
+The folder [`rev1/`](rev1) holds the analyses added for the resubmission of paper 1
+to IEEE Trans. Instrumentation and Measurement. Each script states its inputs and
+outputs in its docstring, and writes to `results/rev1_*` and `figures/rev1_*`.
+
+**Correction to the headline above.** The heat capacity used by every
+surface-only fit here (`cp = 1171.6 J/kg/K` in `part7_lib.py`) was identified by
+Richardson and Howey on drive cycle 1 using *both* thermocouples. Core information
+from record 1 therefore enters the surface-only estimates through the heat capacity,
+and the statement that no core statistic enters the chain is not correct.
+`rev1/surface_route.py` shows why this matters. Bi identified from the surface
+alone amplifies relative errors in heat capacity and heat input by `1 + 4/Bi`
+(about 4.3 here). With a heat capacity from the literature range, the record-2
+core RMSE becomes 1.17 to 3.57 K instead of 0.14 K.
+
+What the revision uses instead:
+
+| script | result |
+|---|---|
+| `calib_gum.py` | gain `G = Bi/2` calibrated by least squares on one record's core thermocouple, applied to the other: RMSE 0.130 K and 0.097 K; GUM Monte Carlo budget (JCGM 100/101), `U(d)` 0.46 K and 0.41 K at peak gradient (k = 2) |
+| `timescale_theory.py` | exact frequency response of the quasi-steady error, independent of Bi, `eps ~ omega*tau_d/16`; galvanostatic curves for two geometries; equivalent forcing time of a drive cycle from its current |
+| `warwick.py`, `warwick_export.m` | LG M50 21700 cells with embedded core thermocouples (Gulsoy et al.): relation holds to 0.06 to 0.11 K in 14 tests; the calibrated gain varies with the surface-sensor installation |
+| `bi_bootstrap.py`, `profile_likelihood.py`, `gum_budget.py` | identifiability and uncertainty of the surface-only route |
+| `heatgen_axial.py` | non-uniform heat generation and a 2-D axisymmetric model with axial conduction and tab heat |
+| `pinn_ablation.py` | inverse-PINN ablation and normalised PDE residual |
+| `lag_correction.py`, `fig_rev1.py`, `fig_supp.py` | first-order lag correction; figures |
+
+All scripts read the data from the directory named by `BATTERY_PINN_DATA`
+(see [DATA.md](DATA.md)).
+
+---
+
 ## The two manuscripts
 
 | | Subject |

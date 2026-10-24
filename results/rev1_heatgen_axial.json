@@ -1,0 +1,78 @@
+{
+ "part1_radial_nonuniform": [
+  {
+   "beta": -0.4,
+   "closed_form_factor": 0.8,
+   "fv_ratio_over_Bi2": 0.7809211416368298,
+   "qs_rel_err_pct": 33.56842624146852
+  },
+  {
+   "beta": -0.2,
+   "closed_form_factor": 0.9,
+   "fv_ratio_over_Bi2": 0.885761640618308,
+   "qs_rel_err_pct": 17.21310452819834
+  },
+  {
+   "beta": 0.0,
+   "closed_form_factor": 1.0,
+   "fv_ratio_over_Bi2": 0.9914342105701164,
+   "qs_rel_err_pct": 5.83620017944151
+  },
+  {
+   "beta": 0.2,
+   "closed_form_factor": 1.1,
+   "fv_ratio_over_Bi2": 1.0979999454698068,
+   "qs_rel_err_pct": 9.030170340070496
+  },
+  {
+   "beta": 0.4,
+   "closed_form_factor": 1.2,
+   "fv_ratio_over_Bi2": 1.2053769115559558,
+   "qs_rel_err_pct": 17.189970230956785
+  }
+ ],
+ "part2_axial_2d": {
+  "1-D limit (k_z = k_r, adiabatic ends)": {
+   "ratio_over_Bi2": 0.9914312919850261,
+   "qs_rel_err_pct": 5.82669145581802,
+   "qs_core_rmse_K": 0.33941344095591397,
+   "peak_grad_K": 6.247838051419219,
+   "peak_rise_K": 10.81720241117577
+  },
+  "k_z = 25, ends insulated (h_end = 2)": {
+   "ratio_over_Bi2": 0.9900808386758553,
+   "qs_rel_err_pct": 5.903498498033193,
+   "qs_core_rmse_K": 0.33919891646553385,
+   "peak_grad_K": 6.180475018400429,
+   "peak_rise_K": 10.718050246002726
+  },
+  "k_z = 25, ends insulated, 10 % tab heat": {
+   "ratio_over_Bi2": 0.9928478042686353,
+   "qs_rel_err_pct": 5.697094915925684,
+   "qs_core_rmse_K": 0.32738601370077924,
+   "peak_grad_K": 6.173679296370484,
+   "peak_rise_K": 10.654575841078888
+  },
+  "k_z = 25, ends open (h_end = h)": {
+   "ratio_over_Bi2": 0.9663341886836111,
+   "qs_rel_err_pct": 7.732050990278291,
+   "qs_core_rmse_K": 0.3511150652711779,
+   "peak_grad_K": 5.172600194531338,
+   "peak_rise_K": 9.275508162961874
+  },
+  "k_z = 25, ends open, 20 % tab heat": {
+   "ratio_over_Bi2": 0.9728473939683292,
+   "qs_rel_err_pct": 7.048672366293071,
+   "qs_core_rmse_K": 0.32104717649841114,
+   "peak_grad_K": 5.14568379720458,
+   "peak_rise_K": 9.136200576300553
+  },
+  "k_z = 2 (poor axial), ends open, 20 % tab heat": {
+   "ratio_over_Bi2": 0.9917614969798921,
+   "qs_rel_err_pct": 5.7107094093482855,
+   "qs_core_rmse_K": 0.2718946256720503,
+   "peak_grad_K": 5.204024825726869,
+   "peak_rise_K": 8.995204948941819
+  }
+ }
+}

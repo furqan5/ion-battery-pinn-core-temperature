@@ -1,0 +1,6 @@
+record 1: Bi0 1.2142  1+4/Bi 4.294  dlnBi/dln(rho_cp) -4.298  dlnBi/dlnQ +4.292  dln h/dlnQ +0.986
+record 2: Bi0 1.1487  1+4/Bi 4.482  dlnBi/dln(rho_cp) -4.555  dlnBi/dlnQ +4.547  dln h/dlnQ +0.985
+R&H identified (record 1, both thermocouples)    rho_cp  +0.0 %  Bi 1.214/1.149  core RMSE rec2 0.141 K, rec1 0.337 K
+R&H Table II literature, upper                   rho_cp  -5.3 %  Bi 1.506/1.442  core RMSE rec2 1.166 K, rec1 0.707 K
+R&H Table II literature, lower                   rho_cp -14.2 %  Bi 2.077/2.021  core RMSE rec2 3.567 K, rec1 2.725 K
+datasheet mass, literature upper                 rho_cp  -8.1 %  Bi 1.671/1.609  core RMSE rec2 1.857 K, rec1 1.285 K
