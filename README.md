@@ -8,12 +8,15 @@
 Analysis code and results for two manuscripts on inverse estimation of internal
 cell state from a single external temperature channel.
 
-**The short version of what is in here: the internal temperature of a
-cylindrical LFP cell is recoverable from surface data to 0.14 K, verified against
-a real core thermocouple — and the inverse physics-informed neural network built
-to do it is the worst of the three methods tried. One line of algebra beats it by
-4.4×.** That negative result is the most useful thing in the repository and it is
-reported as the headline rather than a footnote.
+**The short version of what is in here: the core temperature of a cylindrical
+LFP cell follows from its surface, ambient and current channels by one line of
+algebra, `T_core = T_surf + G (T_surf − T_inf)`. With the gain `G` calibrated
+against a core thermocouple on one drive cycle, the other drive cycle is
+reproduced to 0.130 K RMSE, with a GUM standard uncertainty of 0.24 K at peak
+gradient. The inverse physics-informed neural network built for the same task is
+less accurate than that one line.** Version 1.1.0 adds the calibration, the
+uncertainty evaluation, a second cell type and a correction to version 1.0.0; see
+[Revision 1](#revision-1-october-2026-calibration-gum-uncertainty-and-a-correction).
 
 ![Internal temperature reconstructed from surface data alone. Black is the
 measured core thermocouple, held out from every fit. Blue is the measured
@@ -74,16 +77,19 @@ release.** Everything needed to reproduce every number they report is here.
 
 ## Headline results
 
-Fitting the **surface trace only**, scored against a measured core thermocouple
-that no estimator sees, on two independent drive cycles:
+Scored against a measured core thermocouple on two drive cycles, with every
+parameter taken from the other record:
 
 | method | DS2 core RMSE | DS1 core RMSE |
 |---|---|---|
-| **quasi-steady one-liner** `T_core = T_surf + (Bi/2)(T_surf − T_inf)` | **0.1409 K** | **0.3366 K** |
+| **quasi-steady one-liner, gain calibrated on the other record's core** (v1.1.0) | **0.130 K** | **0.097 K** |
+| quasi-steady one-liner, Bi from a surface-only fit (v1.0.0) | 0.1409 K | 0.3366 K |
 | classical transient finite volume | 0.8943 K | 1.0544 K |
 | inverse PINN (the method under test) | 0.6135 K | 0.5024 K |
 
-against measured core-to-surface gradients peaking at 6.54 K and 7.13 K.
+against measured core-to-surface gradients peaking at 6.54 K and 7.13 K. The
+surface-only rows use the heat capacity of Richardson and Howey, which was
+identified on DS1 with both thermocouples (see Revision 1 above).
 
 The reason the one-liner wins is quasi-steadiness, and it is demonstrated rather
 than asserted: the ratio (core − surface)/(surface − ambient) is constant to
@@ -199,13 +205,16 @@ results here are negative:
 
 Stated here because it belongs in the README, not only in the papers.
 
-- One cell, two drive cycles, one ambient (~8 °C). Nothing here speaks to
-  temperature dependence, ageing, or cell-to-cell variation.
-- **The Biot number is an input, not an output.** Everything rests on it and it is
-  not identifiable from a single surface channel; its correlation with `k` is
-  0.998.
-- The core prediction is essentially a function of `k`, and surface data cannot
-  identify `k`. The headline therefore rests on an input.
+- One A123 cell, two drive cycles, one ambient (~8 °C), one sensor installation.
+  The LG M50 analysis (`rev1/warwick.py`) adds three cells at 25 °C and shows that
+  the calibrated gain changes with the surface-sensor installation; ageing beyond
+  100 cycles and fast charging are not covered.
+- **The Biot number is not identifiable from a single surface channel.** Its
+  correlation with `k` is 0.998, and a surface-only fit converts any error in heat
+  capacity or heat input into Bi with a factor `1 + 4/Bi` (`rev1/surface_route.py`).
+  Version 1.0.0 used a heat capacity that Richardson and Howey identified with both
+  thermocouples; version 1.1.0 calibrates the gain against the core thermocouple
+  instead and says so.
 - `R_eff` is a blend, not an internal resistance. The entropic term is off in the
   headline; switching it on moves core RMSE by 0.4 %.
 - No shape `R(x)` was recovered over `[0,1]`. The depth-of-discharge window spans
@@ -215,8 +224,11 @@ Stated here because it belongs in the README, not only in the papers.
 
 ## Citation
 
-See `CITATION.cff`. If you use the datasets, cite the datasets — `DATA.md` lists
-them. Their authors did the expensive part.
+See `CITATION.cff`. The DOI
+[10.5281/zenodo.22043513](https://doi.org/10.5281/zenodo.22043513) covers all
+versions and resolves to the latest; version 1.1.0 holds the revision analyses in
+`rev1/`. If you use the datasets, cite the datasets — `DATA.md` lists them. Their
+authors did the expensive part.
 
 ## Licence
 

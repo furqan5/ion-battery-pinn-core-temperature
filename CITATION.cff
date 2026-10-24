@@ -12,8 +12,7 @@ authors:
     email: furqanshakeel5@outlook.com
     orcid: 'https://orcid.org/0009-0004-7819-2492'
     affiliation: >-
-      Institute of Energy and Environmental Engineering, University of the
-      Punjab, Lahore, Pakistan
+      Independent consultant energy engineer, Lahore, Pakistan
   - given-names: Syed Sheraz
     family-names: Daood
     orcid: 'https://orcid.org/0000-0002-4580-2504'
@@ -23,19 +22,21 @@ authors:
 doi: 10.5281/zenodo.22043513
 repository-code: 'https://github.com/furqan5/ion-battery-pinn-core-temperature'
 abstract: >-
-  Inverse estimation of internal lithium-ion cell state from a single external
-  temperature channel, validated against a measured core thermocouple. Three
-  estimators are compared on identical information: a transient finite-volume
-  inverse, an inverse physics-informed neural network, and a one-line
-  quasi-steady algebraic relation. The algebraic relation is the most accurate
-  at 0.141 K core RMSE against gradients peaking at 6.54 K, and the neural
-  estimator is the worst of the three; the repository reports that negative
-  result as its headline. A companion phase-change study finds the remaining
-  latent buffer identifiable to 0.1 percent of capacity from one surface sensor
-  while the melt-front position is not identifiable at any heating rate tested.
-  Includes Cramer-Rao identifiability analysis performed before fitting,
-  pre-registered predictions scored with misses reported, solver verification
-  against closed-form solutions, and a leak audit.
+  Core temperature of cylindrical lithium-ion cells from surface, ambient and
+  current channels, validated against measured core thermocouples. The
+  quasi-steady relation T_core = T_surf + G (T_surf - T_inf), with G = Bi/2,
+  is calibrated against a core thermocouple on one drive cycle of an A123 26650
+  cell and reproduces the other with 0.130 K RMSE; a Monte Carlo uncertainty
+  evaluation following JCGM 100 and JCGM 101 gives 0.24 K standard uncertainty
+  at peak gradient. The relation's dynamic error is derived in closed form and
+  does not depend on Bi. Identifying Bi from the surface alone amplifies errors
+  in heat capacity and heat input by 1 + 4/Bi; version 1.0.0 used a heat
+  capacity identified with both thermocouples, which version 1.1.0 corrects.
+  LG M50 21700 cells with embedded thermocouples confirm the relation and show
+  that the calibrated gain depends on the surface-sensor installation. A
+  transient finite-volume inverse and an inverse physics-informed neural network
+  are less accurate on the same information. A companion phase-change study and
+  a Cramer-Rao identifiability analysis are included.
 keywords:
   - lithium-ion battery
   - core temperature estimation
@@ -45,7 +46,9 @@ keywords:
   - Cramer-Rao bound
   - phase change material
   - negative results
+  - measurement uncertainty
+  - GUM
 license: MIT
 license-url: 'https://github.com/furqan5/ion-battery-pinn-core-temperature/blob/main/LICENSE'
-version: v1.0.0
-date-released: '2026-08-21'
+version: v1.1.0
+date-released: '2026-10-24'
